@@ -1,5 +1,5 @@
 <template>
-  <li :class="{ completed: completed }">
+  <li class="todo-item" :class="{ completed: completed }">
     <input type="checkbox" v-model="completed">
     {{ todo.task }}
   </li>
@@ -24,7 +24,11 @@ export default {
 </script>
 
 <style scoped>
-.completed {
+li.todo-item {
+  list-style-type: none;
+}
+
+li.completed {
   text-decoration-line: line-through;
 }
 </style>
