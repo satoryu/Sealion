@@ -23,16 +23,12 @@ export default {
   computed: mapState(['todos']),
   methods: {
     addTodo() {
-      // If given task is empty, nothing to do
-      if (!this.inputedTodo) {
-        return
-      }
-
-      let newId = Math.max(...(this.todos.map(t => t.id)));
-
-      this.todos.push({id: newId, task: this.inputedTodo});
-      this.inputedTodo = '';
+      this.$store.dispatch('addTodo', this.inputedTodo)
+      this.inputedTodo = ''
     }
+  },
+  created() {
+    this.$store.dispatch('loadTodos')
   }
 }
 </script>
