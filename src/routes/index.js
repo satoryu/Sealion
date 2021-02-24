@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Home from '../components/routes/Home.vue'
+import HomePage from '../components/routes/HomePage.vue'
+import TodoDetailPage from '../components/routes/TodoDetailPage.vue'
 
 const routes = [
-  { path: '/', component: Home },
+  { name: 'Home', path: '/', component: HomePage },
+  { name: 'TodoDetail', path: '/todos/:id', component: TodoDetailPage, props: true }
 ]
 
 export default createRouter({

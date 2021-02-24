@@ -2,6 +2,8 @@
   <li class="todo-item" :class="{ completed: completed }">
     <input type="checkbox" v-model="completed">
     {{ todo.task }}
+
+    <router-link :to="{ name: 'TodoDetail', params: { id: todo.id }}">Detail</router-link>
   </li>
 </template>
 

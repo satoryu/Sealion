@@ -12,6 +12,9 @@ export default new Vuex.Store({
   getters: {
     taskSize(state) {
       return state.todos.length
+    },
+    findTodoById: state => id => {
+      return state.todos.find(todo => todo.id === id)
     }
   },
   actions: {
