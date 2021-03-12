@@ -1,5 +1,5 @@
 <template>
-  <todo-detail :id="1"></todo-detail>
+  <todo-detail :id="id"></todo-detail>
 </template>
 
 <script>
