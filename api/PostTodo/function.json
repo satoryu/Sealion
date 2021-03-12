@@ -14,7 +14,8 @@
       "direction": "out",
       "type": "table",
       "name": "newTodo",
-      "tableName": "todos"
+      "tableName": "todos",
+      "connection": "TABLE_STORAGE_CONNECTION"
     },
     {
       "type": "http",

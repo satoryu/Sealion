@@ -14,7 +14,8 @@
       "direction": "in",
       "type": "table",
       "name": "todos",
-      "tableName": "todos"
+      "tableName": "todos",
+      "connection": "TABLE_STORAGE_CONNECTION"
     },
     {
       "type": "http",
