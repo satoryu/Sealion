@@ -27,7 +27,6 @@ export default new Vuex.Store({
         return
       }
 
-      const newId = context.getters['taskSize']
       const newTodo = { task: newTask }
       const url = window.location.href + 'api/todos'
 
