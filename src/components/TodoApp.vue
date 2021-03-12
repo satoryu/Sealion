@@ -26,9 +26,6 @@ export default {
       this.$store.dispatch('addTodo', this.inputedTodo)
       this.inputedTodo = ''
     }
-  },
-  created() {
-    this.$store.dispatch('loadTodos')
   }
 }
 </script>

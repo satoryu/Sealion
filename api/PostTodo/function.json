@@ -6,14 +6,14 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "get"
+        "post"
       ],
       "route": "todos"
     },
     {
-      "direction": "in",
+      "direction": "out",
       "type": "table",
-      "name": "todos",
+      "name": "newTodo",
       "tableName": "todos"
     },
     {
