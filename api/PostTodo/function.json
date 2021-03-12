@@ -1,0 +1,25 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ],
+      "route": "todos"
+    },
+    {
+      "direction": "out",
+      "type": "table",
+      "name": "newTodo",
+      "tableName": "todos"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}

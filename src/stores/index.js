@@ -5,8 +5,11 @@ export default new Vuex.Store({
     todos: [ ]
   },
   mutations: {
-    add(state, newTodo) {
+    push(state, newTodo) {
       state.todos.push(newTodo)
+    },
+    unshift(state, newTodo) {
+      state.todos.unshift(newTodo)
     }
   },
   getters: {
@@ -25,22 +28,25 @@ export default new Vuex.Store({
       }
 
       const newId = context.getters['taskSize']
-      const newTodo = { id: newId, task: newTask }
+      const newTodo = { task: newTask }
+      const url = window.location.href + 'api/todos'
 
-      context.commit('add', newTodo)
+      fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(newTodo)
+      }).then(async response => {
+        const storedTodo = (await response.json())['todo']
+        context.commit('unshift', storedTodo)
+      }).catch(error => {
+        console.error(error)
+      })
     },
-    loadTodos(context) {
-      if (context.getters['taskSize'] > 0) {
-        return
-      }
+    async loadTodos(context) {
+      const url = window.location.href + 'api/todos'
+      const response = await fetch(url)
+      const initialTodos = (await response.json())['todos'];
 
-      const initialTodos = [
-        { id: 0, task: 'タスクを入力する', completed: false },
-        { id: 1, task: 'Enterを押す', completed: false },
-        { id: 2, task: '完了したタスクのチェックを付ける', completed: false },
-        { id: 3, task: '息を吸う', completed: true }
-      ]
-      initialTodos.forEach(todo => { context.commit('add', todo) })
+      initialTodos.forEach(todo => { context.commit('push', todo) })
     }
   }
 })

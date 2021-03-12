@@ -4,5 +4,8 @@
 
 <script>
 export default {
+  async created() {
+    this.$store.dispatch('loadTodos')
+  }
 }
 </script>

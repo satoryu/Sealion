@@ -5,5 +5,12 @@ import vue from '@vitejs/plugin-vue'
  * @type {import('vite').UserConfig}
  */
 export default {
-  plugins: [vue()]
+  plugins: [vue()],
+  server: {
+    proxy: {
+      '^/api/.*': {
+        target: 'http://localhost:7071'
+      }
+    }
+  }
 }
