@@ -1,2 +1,14 @@
-%h1 Tasks#index
-%p Find me in app/views/tasks/index.html.erb
+%h1 タスク一覧
+
+= link_to '新規タスク', new_task_path, class: 'btn btn-primary', data: { turbo_frame: 'modal' }
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th 内容
+      %th 期限
+  %tbody#tasks
+    - @tasks.each do |task|
+      %tr
+        %td= task.summary
+        %td= task.due_date
