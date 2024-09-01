@@ -7,8 +7,11 @@
     %tr
       %th 内容
       %th 期限
+      %th
   %tbody#tasks
     - @tasks.each do |task|
-      %tr
+      %tr{ id: dom_id(task) }
         %td= task.summary
         %td= task.due_date
+        %td
+          = link_to '削除', task, data: { turbo_confirm: '本当に削除しますか？', turbo_method: :delete }, class: 'btn btn-danger'

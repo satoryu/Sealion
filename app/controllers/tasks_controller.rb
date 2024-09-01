@@ -23,6 +23,14 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    @task = Task.find(params[:id])
+
+    @task.destroy!
+
+    respond_to do |format|
+      format.html { redirect_to tasks_path }
+      format.turbo_stream
+    end
   end
 
   private
