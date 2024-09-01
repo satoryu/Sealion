@@ -4,7 +4,7 @@
     %button.close{ data: { action: 'modal#close' } }
       %span{ aria: { hidden: true } } &times;
   .modal-body
-    = bootstrap_form_for(@task) do |f|
+    = bootstrap_form_for(@task, data: { action: 'modal#close' }) do |f|
       = f.text_field :summary, label: '内容'
       = f.date_field :due_date, label: '期限'
       = f.submit '作成', class: 'btn btn-primary'
