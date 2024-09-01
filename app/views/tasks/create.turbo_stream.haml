@@ -1,4 +1,1 @@
-= turbo_stream.append :tasks do
-  %tr
-    %td= @task.summary
-    %td= @task.due_date
+= turbo_stream.append :tasks, partial: 'task_record', locals: { task: @task }

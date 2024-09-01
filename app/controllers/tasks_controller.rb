@@ -20,6 +20,9 @@ class TasksController < ApplicationController
   end
 
   def update
+    @task = Task.find(params[:id])
+
+    render :edit unless @task.update(task_params)
   end
 
   def destroy
@@ -36,6 +39,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:summary, :description)
+    params.require(:task).permit(:summary, :due_date, :completed)
   end
 end

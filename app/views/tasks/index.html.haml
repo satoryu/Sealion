@@ -2,16 +2,4 @@
 
 = link_to '新規タスク', new_task_path, class: 'btn btn-primary', data: { turbo_frame: 'modal' }
 
-%table.table.table-striped
-  %thead
-    %tr
-      %th 内容
-      %th 期限
-      %th
-  %tbody#tasks
-    - @tasks.each do |task|
-      %tr{ id: dom_id(task) }
-        %td= task.summary
-        %td= task.due_date
-        %td
-          = link_to '削除', task, data: { turbo_confirm: '本当に削除しますか？', turbo_method: :delete }, class: 'btn btn-danger'
+= render 'task_table', tasks: @tasks

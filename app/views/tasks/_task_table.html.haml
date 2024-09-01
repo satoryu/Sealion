@@ -1,0 +1,10 @@
+%table.table.table-striped
+  %thead
+    %tr
+      %th
+      %th 内容
+      %th 期限
+      %th
+  %tbody#tasks
+    - tasks.each do |task|
+      = render 'task_record', task: task
