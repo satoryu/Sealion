@@ -1,2 +1,6 @@
-%h1 Tasks#edit
-%p Find me in app/views/tasks/edit.html.erb
+= turbo_frame_tag dom_id(@task) do
+  %li.list-group-item{ id: dom_id(@task), class: %i[d-flex justify-content-between align-items-center] }
+    = bootstrap_form_for(@task, url: task_path(@task), data: { turbo_frame: dom_id(@task) }, layout: :inline) do |f|
+      = f.text_field :summary, skip_label: true
+      = f.date_field :due_date, skip_label: true
+      = f.primary 'Update'
