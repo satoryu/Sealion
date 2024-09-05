@@ -1,8 +1,8 @@
-%li.list-group-item{ id: dom_id(task), class: [(!task.completed? || 'text-secondary'), 'd-flex', 'justify-content-between', 'align-items-center'] }
+%li.list-group-item{ id: dom_id(task), class: %i[d-flex justify-content-between align-items-center].append(!task.completed? || 'text-secondary') }
   = form_for(task, url: task_path(task), data: { turbo_frame: dom_id(task) }) do |f|
     .form-check
       = f.check_box :completed, onclick: 'this.form.requestSubmit()', class: %i[form-check-input]
-      = f.label :completed, class: %i[form-check-label] do
+      = f.label :completed, class: %i[form-check-label].append(!task.completed? || 'text-decoration-line-through') do
         = task.summary
         = task.due_date
   = link_to '削除', task, data: { turbo_confirm: '本当に削除しますか？', turbo_method: :delete }, class: 'btn btn-danger'
