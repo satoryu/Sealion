@@ -1,8 +1,7 @@
 = render 'modal' do
   .modal-header
     %h5.modal-title 新規タスク作成
-    %button.close{ data: { action: 'modal#close' } }
-      %span{ aria: { hidden: true } } &times;
+    %button.btn-close{ data: { action: 'modal#close' } }
   .modal-body
     = bootstrap_form_for(@task, data: { action: 'modal#close' }) do |f|
       = f.text_field :summary, label: '内容'

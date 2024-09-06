@@ -2,4 +2,8 @@
 
 = link_to '新規タスク', new_task_path, class: 'btn btn-primary', data: { turbo_frame: 'modal' }
 
-= render partial: 'tasks', locals: { tasks: @tasks }
+#task-progress-bar.progress.my-3{ role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 100, data: { controller: 'progress-bar', progress_bar_task_outlet: '.task' } }
+  .progress-bar{ style: "width: 0%", data: { progress_bar_target: 'progressBar' } }
+
+%ul.list-group#tasks
+  = render @tasks
