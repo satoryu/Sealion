@@ -66,5 +66,7 @@ group :development do
   # gem "spring"
 
   gem 'html2haml'
+
+  gem 'katakata_irb', require: false
 end
 
