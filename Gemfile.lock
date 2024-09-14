@@ -309,6 +309,7 @@ DEPENDENCIES
   katakata_irb
   puma (>= 5.0)
   rails (~> 7.1.4)
+  rbs
   redis (>= 4.0.1)
   sprockets-rails
   sqlite3 (>= 1.4)

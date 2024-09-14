@@ -68,5 +68,6 @@ group :development do
   gem 'html2haml'
 
   gem 'katakata_irb', require: false
+  gem 'rbs', require: false
 end
 
