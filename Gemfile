@@ -69,5 +69,6 @@ group :development do
 
   gem 'katakata_irb', require: false
   gem 'rbs', require: false
+  gem 'rbs_rails', require: false
 end
 
