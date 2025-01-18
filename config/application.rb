@@ -38,5 +38,17 @@ module Sealion
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.rails_semantic_logger.format = :json
+    config.rails_semantic_logger.started = false
+    config.rails_semantic_logger.processing = true
+    config.rails_semantic_logger.rendered = true
+    config.colorize_logging = true
+
+    $stdout.sync = true
+    config.semantic_logger.add_appender(io: $stdout, formatter: config.rails_semantic_logger.format)
+
+    config.log_level = ENV.fetch('LOG_LEVEL', 'debug').downcase.to_sym
+    config.log_tags = { request_id: :request_id, ip: :remote_ip }
   end
 end

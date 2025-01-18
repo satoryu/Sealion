@@ -75,6 +75,7 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
+    amazing_print (1.6.0)
     ast (2.4.2)
     autoprefixer-rails (10.4.7.0)
       execjs (~> 2)
@@ -219,6 +220,10 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails_semantic_logger (4.17.0)
+      rack
+      railties (>= 5.1)
+      semantic_logger (~> 4.16)
     railties (7.1.4)
       actionpack (= 7.1.4)
       activesupport (= 7.1.4)
@@ -257,6 +262,8 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.3.1)
+    semantic_logger (4.16.1)
+      concurrent-ruby (~> 1.0)
     sexp_processor (4.17.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -335,6 +342,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  amazing_print
   bootsnap
   bootstrap (~> 5.0)
   bootstrap_form (~> 5.3)
@@ -347,6 +355,7 @@ DEPENDENCIES
   katakata_irb
   puma (>= 5.0)
   rails (~> 7.1.4)
+  rails_semantic_logger
   rbs
   rbs_rails
   redis (>= 4.0.1)

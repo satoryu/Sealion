@@ -50,6 +50,9 @@ gem 'haml-rails'
 gem 'bootstrap', '~> 5.0'
 gem 'bootstrap_form' , '~> 5.3'
 
+gem 'amazing_print'
+gem 'rails_semantic_logger'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
