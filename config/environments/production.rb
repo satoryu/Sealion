@@ -51,6 +51,9 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
 
+  config.colorize_logging = false
+  $stdout.sync = true
+  config.semantic_logger.add_appender(io: $stdout, formatter: config.rails_semantic_logger.format)
   config.rails_semantic_logger.add_file_appender = false
 
   # Prepend all log lines with the following tags.
