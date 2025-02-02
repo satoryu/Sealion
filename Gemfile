@@ -76,3 +76,8 @@ group :development do
   gem 'steep', require: false
 end
 
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
+end
+
