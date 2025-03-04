@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
   validates :summary, presence: true
-  validate :due_date_later_than_today
+  validate :due_date_later_than_today, on: :create
 
   private
 
